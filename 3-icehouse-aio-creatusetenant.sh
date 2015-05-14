@@ -1,6 +1,9 @@
 #!/bin/bash -ex
 
 source config.cfg
+MASTER=192.168.50.12
+LOCAL_IP=10.1.1.12
+GATEWAY_IP=`route -n | grep 'UG[ \t]' | awk '{print $2}'`
 export OS_SERVICE_TOKEN="$TOKEN_PASS"
 export OS_SERVICE_ENDPOINT="http://$MASTER:35357/v2.0"
 export SERVICE_ENDPOINT="http://$MASTER:35357/v2.0"
